@@ -3,4 +3,3 @@ pandas
 streamlit
 folium
 gsheetsdb
-google.oauth2
