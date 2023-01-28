@@ -1,24 +1,19 @@
-# streamlit_app.py
-
 import streamlit as st
-from gsheetsdb import connect
+import folium
 
-# Create a connection object.
-conn = connect()
+@st.cache
+def create_map():
+    m = folium.Map()
+    folium.Marker(
+        location=[45.523, -122.675],
+        popup='Portland, OR',
+        icon=folium.Icon(color='red', icon='info-sign')
+    ).add_to(m)
+    return m
 
-# Perform SQL query on the Google Sheet.
-# Uses st.cache to only rerun when the query changes or after 10 min.
-'''
-@st.cache(ttl=600)
-def run_query(query):
-    rows = conn.execute(query, headers=1)
-    rows = rows.fetchall()
-    return rows
+map_ = create_map()
 
-sheet_url = st.secrets["public_gsheets_url"]
-rows = run_query(f'SELECT * FROM "{sheet_url}"')
+if st.button("Hover over me!"):
+    map_.add_child(folium.Popup("Hovering!"))
 
-# Print results.
-for row in rows:
-    st.write(f"{row.name} has a :{row.pet}:")
-    '''
+st.write(map_)
