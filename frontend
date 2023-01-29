@@ -1,0 +1,139 @@
+import streamlit as st
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
+import pandas as pd
+import chart_studio
+import numpy as np
+import plotly.express as px
+import chart_studio.plotly as py
+import plotly.io as pio
+from urllib.request import urlopen
+import json
+#Modules used in frontend
+
+
+
+
+#Title
+st.markdown(""" <style> .font {
+font-size:50px ; font-family: 'Gotham'; color: rgb(30, 215, 96);} 
+</style> """, unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: rgb(30, 215, 96);'>LocoListen</h1>", unsafe_allow_html = True)
+
+#Alignment of Logo
+col6, col7, col8, col9, col10 = st.columns(5)
+with col6:
+    pass
+with col7:
+    pass
+with col9:
+    pass
+with col10:
+    pass
+with col8:
+    st.image("https://media.giphy.com/media/yOCHlNTlbpO9nrUCuD/giphy.gif", width=130,)
+
+#Site-wide font and color css changes
+st.markdown(""" <style> .font {
+font-size:50px ; font-family: 'Gotham'; color: rgb(30, 215, 96);} 
+</style> """, unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: rgb(30, 215, 96);'>Find what your community is listening to!</h3>", unsafe_allow_html = True)
+
+#Map creation
+df = pd.DataFrame(
+    np.random.randn(1000, 2) / [50, 50] + [42.7387, -84.4853],
+    columns=['lat', 'lon'])
+
+st.map(df)
+
+#centering buttons
+col1, col2, col3 , col4, col5 = st.columns(5)
+m = st.markdown("""
+    <style>
+    div.stButton > button:first-child {
+        background-color: rgb(30, 215, 96);
+        }
+        </style""", unsafe_allow_html = True)
+with col1:
+    button1 = st.button("Upload Playlists")
+    if button1:
+        user_text = st.text_input("Enter Playlist URL:")
+        if len(user_text) > 0:
+            st.markdown(""" <style> .font {
+            font-size:50px ; font-family: 'Gotham'; color: white;} 
+            </style> """, unsafe_allow_html=True)
+            st.markdown(':white[_Upload Success!_]')
+            st.write("\n")
+with col2:
+    button2 = st.button("Upload Songs by you!")
+    if button2:
+        user_text = st.text_input("Enter Song URL:")
+        if len(user_text) > 0:
+            st.markdown(""" <style> .font {
+            font-size:50px ; font-family: 'Gotham'; color: white;} 
+            </style> """, unsafe_allow_html=True)
+            st.markdown(':white[_Upload Success!_]')
+            st.write("\n")
+
+with col4:
+    button4 = st.button("View Songs near you!")
+    if button4:
+        df3 = pd.DataFrame(
+            np.random.randn(10, 1),
+            columns=('Songs %d' % i for i in range(1)))
+            #list for songs
+        st.dataframe(df3)
+with col5:
+    button5 = st.button("About Need Sleep Inc.!")
+    if button5:
+        st.markdown(""" <style> .font {
+        font-size:50px ; font-family: 'Gotham'; color: white;} 
+        </style> """, unsafe_allow_html=True)
+        st.markdown(':white[_Need Sleep Inc. is a team of student programmers from Michigan State University._]')
+        st.write("\n")
+        st.markdown(':white[_This is a project developed during Spartahack 8._]')
+
+with col3:
+    button3 = st.button("View Playlists near you!")
+    if button3:
+        df2 = pd.DataFrame(
+            np.random.randn(10, 1),
+            columns=('Songs %d' % i for i in range(1)))
+
+        st.dataframe(df2)
+
+#footer code css
+footer="""<style>
+a:link , a:visited{
+color: blue;
+background-color: transparent;
+text-decoration: underline;
+}
+
+a:hover,  a:active {
+color: red;
+background-color: transparent;
+text-decoration: underline;
+}
+
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: rgb(30, 215, 96);
+color: white;
+text-align: center;
+}
+</style>
+<div class="footer">
+<p>Developed by <a style='display: block; text-align: center;'  target="_blank">Need Sleep Inc. ©2023 </a></p>
+</div>
+"""
+
+
+st.markdown(footer,unsafe_allow_html=True)
+
+
+
+
