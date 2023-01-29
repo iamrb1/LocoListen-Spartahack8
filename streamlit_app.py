@@ -199,12 +199,6 @@ for key, value in matrix.items():
 
 
 
-st.write("City: ", data["city"])
-st.write("Region: ", data["regionName"])
-st.write("Country: ", data["country"])
-st.write("Latitude: ", data["lat"])
-st.write("Longitude: ", data["lon"])
-
 
 
 #Title
