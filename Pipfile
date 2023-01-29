@@ -15,6 +15,9 @@ streamlit-bokeh-events = "*"
 requests = "*"
 date = "*"
 streamlit-player = "*"
+chart-studio = "*"
+numpy = "*"
+plotly = "*"
 
 [dev-packages]
 
