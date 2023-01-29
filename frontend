@@ -58,10 +58,22 @@ with col1:
     button1 = st.button("Upload Playlists")
     if button1:
         user_text = st.text_input("Enter Playlist URL:")
+        if user_text:
+            st.markdown(""" <style> .font {
+            font-size:50px ; font-family: 'Gotham'; color: white;} 
+            </style> """, unsafe_allow_html=True)
+            st.markdown(':white[_Upload Success!_]')
+            st.write("\n")
 with col2:
     button2 = st.button("Upload Songs by you!")
     if button2:
         user_text = st.text_input("Enter Song URL:")
+        if user_text:
+            st.markdown(""" <style> .font {
+            font-size:50px ; font-family: 'Gotham'; color: white;} 
+            </style> """, unsafe_allow_html=True)
+            st.markdown(':white[_Upload Success!_]')
+            st.write("\n")
 
 with col4:
     button4 = st.button("View Songs near you!")
