@@ -5,3 +5,4 @@ folium
 gsheetsdb
 pyparsing
 folium
+bokeh
