@@ -14,6 +14,7 @@ bokeh = "*"
 streamlit-bokeh-events = "*"
 requests = "*"
 date = "*"
+streamlit-player = "*"
 
 [dev-packages]
 
