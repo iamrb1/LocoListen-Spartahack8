@@ -18,7 +18,13 @@ def run_query(query):
     return rows
 
 sheet1 = st.secrets['Sheet1']
-
+sheet2 = st.secrets['Sheet2']
+sheet3 = st.secrets['Sheet3']
+sheet4 = st.secrets['Sheet4']
+sheet5 = st.secrets['Sheet5']
+sheet6 = st.secrets['Sheet6']
+sheet7 = st.secrets['Sheet7']
+sheet8 = st.secrets['Sheet8']
 rows = run_query(f'SELECT * FROM "{sheet1}"')
 
 # Print results
