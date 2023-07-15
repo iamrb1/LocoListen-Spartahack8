@@ -11,7 +11,7 @@ from urllib.request import urlopen
 import json
 #Modules used in frontend
 
-
+#Streamlit utilizes html and basic javascript, which can be scripted in python for easier development rather than the use of flask.
 
 
 #Title
@@ -127,7 +127,7 @@ text-align: center;
 }
 </style>
 <div class="footer">
-<p>Developed by <a style='display: block; text-align: center;'  target="_blank">Need Sleep Inc. ©2023 </a></p>
+<p>Developed by <a style='display: block; text-align: center;'  target="_blank">Rahul Baragur, Hemanth Yalamanchili, Ajay Kumar, Joesph Hughes. ©2023 </a></p>
 </div>
 """
 
