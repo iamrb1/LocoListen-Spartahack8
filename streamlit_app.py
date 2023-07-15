@@ -1,4 +1,4 @@
-
+#combination of frontend and backend in one file, database creation and usage of json
 import requests
 from gsheetsdb import connect
 
